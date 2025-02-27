@@ -1,0 +1,518 @@
+:root {
+    --red-gradient: linear-gradient(90deg, #a20101, #FF0000);
+    --dark-gradient: linear-gradient(180deg, #000000, #333333);
+    --black-red-gradient: linear-gradient(90deg, #000000, #FF0000);
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+
+
+/* Base styles */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(to bottom, #fbfafa, #ffffff);
+    color: #000000;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    
+}
+
+
+
+
+
+
+
+/* Header */
+.header {
+    position: sticky;
+    top: 0;
+    background: var(--black-red-gradient);
+    max-width: 100%;
+    
+    color: #FFFFFF;
+    text-align: center;
+    padding: 15px;
+    box-shadow: var(--shadow);
+    z-index: 11;
+}
+
+.header .logo {
+    max-width: 300px;
+    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.5));
+}
+
+/* Main layout */
+.main-container {
+    width: 100%;
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+}
+
+/* Menu */
+.menu {
+    display: flex;
+    flex-direction: column;
+    background: var(--dark-gradient);
+    color: #FFFFFF;
+    
+    padding: 20px;
+    border-right: 2px solid #FF0000;
+}
+
+.menu button {
+    background: var(--red-gradient);
+    color: #FFFFFF;
+    font: bold 14px 'Roboto';
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    margin: 5px 0;
+    cursor: pointer;
+    transition: var(--transition);
+    width: 100%;
+}
+
+.menu button:hover {
+    background: linear-gradient(90deg, #E60000, #C00000);
+    transform: scale(1.05);
+}
+
+/* Content */
+.content {
+    
+    background: #FFFFFF;
+    padding: 20px;
+    color: #000000;
+    border: 2px solid #E0E0E0;
+    box-shadow: var(--shadow);
+    flex: 1;
+    max-width: 1000px;
+}
+
+.content h1 {
+    color: #FF0000;
+    border-bottom: 2px solid #FF0000;
+    padding-bottom: 5px;
+    margin-top: 0;
+}
+
+.content p {
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+/* Table */
+/*.usluga {
+    
+    margin: 20px 0 0 17%;
+}*/
+
+.usluga table {
+    
+    width: 100%;
+    border: 4px solid #000000;
+    border-collapse: collapse;
+    font-size: 16px;
+    text-align: center;
+    background-color: #FFFFFF;
+    box-shadow: var(--shadow);
+}
+
+.usluga table th, .usluga table td {
+    padding: 12px 15px;
+    border: 2px solid #ff0000;
+}
+
+.usluga table thead tr {
+    background: var(--black-red-gradient);
+    color: #FFFFFF;
+}
+
+.usluga table tbody tr {
+    background-color: #F4F4F4;
+}
+
+.usluga table tbody tr:hover {
+    background-color: #E0E0E0;
+}
+
+/* Footer */
+.footer {
+    background: linear-gradient(90deg, #333333, #000000);
+    color: #FFFFFF;
+    text-align: center;
+    padding: 10px;
+    border-top: 3px solid #FF0000;
+}
+
+/* Map Container */
+.mapb {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    background: var(--dark-gradient);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 5;
+}
+
+.tmap {
+    position: relative;
+    background: linear-gradient(90deg, #E60000, #C00000);
+    padding: 20px;
+    border-radius: 8px;
+    color: white;
+    box-shadow: var(--shadow);
+}
+
+/* Map Wrapper */
+.map-container {
+    position: relative;
+    width: 300px; /* Занимает всю ширину родительского контейнера */
+    height: 300px; /* Фиксированная высота для карты */
+    overflow: hidden;
+    margin-bottom: 20px;
+    border: 4px solid #FF0000;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+/* Стили для галереи */
+.gallery-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-right: 30px;
+}
+
+.gallery-grid figure {
+    margin: 0 0 20px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    border: 3px solid #030303;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.gallery-grid img {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-grid figcaption {
+    padding: 10px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Эффект приближения при наведении */
+.gallery-grid figure:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.gallery-grid figure:hover figcaption {
+    opacity: 1;
+}
+
+/* Стили для модального окна */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 800px; /* Ширина модального окна */
+    width: 90%;
+    position: relative;
+}
+
+.modal-body {
+    display: flex;
+    gap: 20px; /* Расстояние между изображением и текстом */
+}
+
+.modal-image {
+    flex: 1; /* Занимает 50% ширины */
+}
+
+.modal-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.modal-text {
+    flex: 1; /* Занимает 50% ширины */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.modal-text h2 {
+    margin-top: 0;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #000;
+}
+
+/* Reviews */
+.greviews {
+    text-align: center;
+    width: auto;
+    height: 300px;
+    background-color: #030303;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    
+}
+
+
+/* Embedded Google Map */
+.map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Map Overlay (для кликабельности) */
+.map-container .map-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    cursor: pointer;
+    z-index: 5;
+}
+
+
+
+
+/* Стили для модального окна */
+.modal {
+  display: none; /* Скрыто по умолчанию */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный фон */
+}
+
+/* Контент модального окна */
+.modal-content {
+  background: linear-gradient(135deg, #f0f0f0, #c0c0c0); /* Градиентный серый фон */
+  margin: 10% auto; /* Отступ сверху */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 10px; /* Закругленные углы */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень */
+  color: #000; /* Черный текст */
+  text-align: center; /* Выравнивание текста по центру */
+}
+
+/* Кнопка закрытия */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: #000; /* Черный цвет при наведении */
+}
+
+/* Дополнительные стили для текста и кнопок внутри модального окна */
+.modal-content p {
+  font-size: 18px;
+  margin: 20px 0;
+}
+
+.modal-content button {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.modal-content button:hover {
+  background-color: #0056b3; /* Темнее при наведении */
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .main-container { flex-direction: column }
+    .menu, .content { width: 100% }
+    .menu { border-right: none; border-bottom: 2px solid #FF0000 }
+    .usluga { margin-left: 0 }
+    .mapb {
+        width: 100%; /* На мобильных карта занимает всю ширину */
+        padding: 10px;
+    }
+    .gallery-grid { margin-right: 0 }
+    .map-container {
+        height: 250px; /* Уменьшаем высоту на мобильных */
+    }
+}
+
+@media (max-width: 480px) {
+    .header {max-width: 100%}
+    .header .logo { width: 150px }
+    .content { padding: 10px }
+    .gallery-grid figure { margin-left: 10px }
+    .map-container {
+        height: 200px; /* Ещё меньше на маленьких экранах */
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Стили для планшетов */
+    .header .logo {
+        max-width: 250px; /* Уменьшаем логотип для планшетов */
+    }
+
+    .main-container {
+        flex-direction: column; /* Меняем направление контейнера на вертикальное */
+        width: 100%;
+    }
+
+    .menu {
+        width: 100%; /* Меню занимает всю ширину */
+        border-right: none;
+        border-bottom: 2px solid #FF0000; /* Добавляем нижнюю границу */
+    }
+
+    .content {
+        padding: 15px; /* Уменьшаем отступы */
+    }
+
+    .usluga {
+        margin-left: 0; /* Убираем отступ слева */
+    }
+
+    .mapb {
+        width: 100%; /* Карта занимает всю ширину */
+        padding: 15px;
+    }
+
+    .gallery-grid {
+        margin-right: 0; /* Убираем отступ справа */
+    }
+
+    .gallery-grid figure {
+        margin-left: 10px; /* Уменьшаем отступ слева */
+    }
+
+    .gallery-grid img {
+        width: 250px; /* Уменьшаем размер изображений */
+    }
+
+    .map-container {
+        height: 250px; /* Уменьшаем высоту карты */
+    }
+}
+
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+    .header .logo {
+        max-width: 280px; /* Логотип немного больше, чем на планшетах */
+    }
+
+    .main-container {
+        flex-direction: column; /* Вертикальная компоновка */
+        width: 100%;
+    }
+
+    .menu {
+        width: 100%; /* Меню во всю ширину */
+        border-right: none;
+        border-bottom: 2px solid #FF0000;
+    }
+
+    .content {
+        padding: 20px; /* Чуть больше отступов */
+    }
+
+    .usluga {
+        margin-left: 0;
+    }
+
+    .mapb {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .gallery-grid {
+        margin-right: 0;
+    }
+
+    .gallery-grid figure {
+        margin-left: 15px;
+    }
+
+    .gallery-grid img {
+        width: 300px; /* Увеличиваем размер изображений */
+    }
+
+    .map-container {
+        height: 300px; /* Чуть больше высота карты */
+    }
+}
