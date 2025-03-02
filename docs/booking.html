@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TITAN</title>
+    <link rel="icon" href="foto/Logotipchik444.webp" type="image/webp" />
+    <link rel="stylesheet" href="Titan2.css" />
+    <!-- Підключення зовнішнього CSS -->
+    <!-- шрифт -->
+  </head>
+  <body class="booking">
+    <div class="header">
+      <a href="index.html"
+        ><img src="foto/headLogo.webp" alt="Titan" class="logo" title="Логотип"
+      /></a>
+    </div>
+
+    <div class="main-container">
+      <!-- Ліве меню з чорною рамкою справа -->
+      <div class="menu">
+        <button onclick="window.location.href='services.html'">
+          Наші послуги</button
+        ><br />
+
+        <button onclick="window.location.href='contact.html'">Де ми?</button
+        ><br />
+
+        <button onclick="window.location.href='gallery.html'">Галерея</button
+        ><br />
+
+        <button onclick="window.location.href='index.html'">Додому</button
+        ><br />
+      </div>
+      <!--блок записи для телефонов-->
+      <!-- Звичайний блок -->
+      <div id="contactBlock" class="contact-block">
+        <div class="block-content">
+          <h2>Записатися</h2>
+          <p>Запис по телефону:</p>
+          <ul>
+            <li>
+              <strong>Телефон 1:</strong>
+              <a href="tel:+1234567890">+1 (234) 567-890</a>
+            </li>
+            <li>
+              <strong>Телефон 2:</strong>
+              <a href="tel:+0987654321">+0 (987) 654-321</a>
+            </li>
+            <li>
+              <strong>Email:</strong>
+              <a href="mailto:info@sto-example.com">info@sto-example.com</a>
+            </li>
+          </ul>
+          <p>Запис по формі:</p>
+          <form id="contactForm">
+            <label for="name">Ваше ім'я:</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              placeholder="Введіть ваше ім'я"
+            />
+
+            <label for="phone">Ваш телефон:</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              required
+              placeholder="Введіть ваш телефон"
+            />
+
+            <label for="message">Повідомлення:</label>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Введіть ваше повідомлення"
+            ></textarea>
+
+            <button type="submit">Надіслати</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">Футер</div>
+
+    <!-- скрипт -->
+    <script src="./js/script.js"></script>
+  </body>
+</html>
