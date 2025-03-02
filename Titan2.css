@@ -1,0 +1,689 @@
+:root {
+  --red-gradient: linear-gradient(90deg, #a20101, #ff0000);
+  --dark-gradient: linear-gradient(180deg, #000000, #333333);
+  --black-red-gradient: linear-gradient(90deg, #000000, #ff0000);
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+/* Base styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Подключение шрифтов */
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./fonts/Roboto-Regular.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  src: url("./fonts/Roboto-Bold.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Russo One";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./fonts/RussoOne-Regular.woff2") format("woff2");
+  font-display: swap;
+}
+
+ul {
+  list-style-type: none; /* Убирает маркеры */
+  padding-left: 0; /* Убирает отступ слева (опционально) */
+}
+
+/* Заголовки */
+h1 {
+  font-size: 2rem; /* 32px */
+}
+
+h2 {
+  font-size: 1.75rem; /* 28px */
+}
+
+h3 {
+  font-size: 1.5rem; /* 24px */
+}
+
+/* Основной текст */
+p {
+  font-size: 1rem; /* 16px */
+}
+
+/* Мелкий текст */
+.small-text {
+  font-size: 0.875rem; /* 14px */
+}
+
+/* Списки */
+ul li {
+  font-size: 1rem; /* 16px */
+}
+
+ul li::before {
+  font-size: 1.2rem; /* 19px */
+}
+
+/* Жирный текст */
+strong {
+  font-size: 1rem; /* 16px */
+}
+
+body {
+  background: linear-gradient(to bottom, #fbfafa, #ffffff);
+  color: #000000;
+  font-family: "Roboto";
+
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+.header {
+  position: sticky;
+  top: 0;
+  background: var(--black-red-gradient);
+  max-width: 100%;
+
+  color: #ffffff;
+  text-align: center;
+  padding: 15px;
+  box-shadow: var(--shadow);
+  z-index: 11;
+}
+
+.header .logo {
+  max-width: 300px;
+  filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.5));
+}
+
+/* Main layout */
+.main-container {
+  width: 100%;
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+}
+
+/* Menu */
+.menu {
+  display: flex;
+  flex-direction: column;
+  background: var(--dark-gradient);
+  color: #ffffff;
+
+  padding: 20px;
+  border-right: 2px solid #ff0000;
+}
+
+.menu button {
+  background: var(--red-gradient);
+  color: #ffffff;
+  font: bold 14px "Roboto";
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  margin: 5px 0;
+  cursor: pointer;
+  transition: var(--transition);
+  width: 100%;
+}
+
+.menu button:hover {
+  background: linear-gradient(90deg, #e60000, #c00000);
+  transform: scale(1.05);
+}
+
+/* Content */
+.content {
+  background: #ffffff;
+  padding: 20px;
+  color: #000000;
+  border: 2px solid #e0e0e0;
+  box-shadow: var(--shadow);
+  flex: 1;
+  max-width: 1000px;
+}
+
+.content h1 {
+  color: #ff0000;
+  border-bottom: 2px solid #ff0000;
+  padding-bottom: 5px;
+  margin-top: 0;
+}
+
+.content p {
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+/* Table */
+/*.usluga {
+    
+    margin: 20px 0 0 17%;
+}*/
+
+.usluga table {
+  width: 100%;
+  border: 4px solid #000000;
+  border-collapse: collapse;
+  font-size: 16px;
+  text-align: center;
+  background-color: #ffffff;
+  box-shadow: var(--shadow);
+}
+
+.usluga table th,
+.usluga table td {
+  padding: 12px 15px;
+  border: 2px solid #ff0000;
+}
+
+.usluga table thead tr {
+  background: var(--black-red-gradient);
+  color: #ffffff;
+}
+
+.usluga table tbody tr {
+  background-color: #f4f4f4;
+}
+
+.usluga table tbody tr:hover {
+  background-color: #e0e0e0;
+}
+
+/* Footer */
+.footer {
+  background: linear-gradient(90deg, #333333, #000000);
+  color: #ffffff;
+  text-align: center;
+  padding: 10px;
+  border-top: 3px solid #ff0000;
+}
+
+/* Map Container */
+.mapb {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  background: var(--dark-gradient);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  z-index: 5;
+}
+
+.tmap {
+  position: relative;
+  font-family: "Russo One";
+  background: linear-gradient(90deg, #e60000, #c00000);
+  padding: 20px;
+  border-radius: 8px;
+  color: white;
+  box-shadow: var(--shadow);
+}
+
+/* Map Wrapper */
+.map-container {
+  position: relative;
+  width: 300px; /* Занимает всю ширину родительского контейнера */
+  height: 300px; /* Фиксированная высота для карты */
+  overflow: hidden;
+  margin-bottom: 20px;
+  border: 4px solid #ff0000;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+/* Стили для галереи */
+.gallery-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-right: 30px;
+}
+
+.gallery-grid figure {
+  margin: 0 0 20px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  border: 3px solid #030303;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.gallery-grid img {
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.gallery-grid figcaption {
+  padding: 10px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Эффект приближения при наведении */
+.gallery-grid figure:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.gallery-grid figure:hover figcaption {
+  opacity: 1;
+}
+
+/* Стили для модального окна */
+.modal {
+  display: none; /* Скрыто по умолчанию */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8); /* Полупрозрачный черный фон */
+}
+
+/* Контент модального окна */
+.modal-content {
+  background: var(--dark-gradient); /* Градиентный фон, как в меню */
+  margin: 10% auto; /* Отступ сверху */
+  padding: 20px;
+  border: 2px solid #ff0000; /* Красная граница, как в других элементах */
+  width: 80%;
+  max-width: 500px;
+  border-radius: 10px; /* Закругленные углы */
+  box-shadow: var(--shadow); /* Тень, как в других элементах */
+  color: #ffffff; /* Белый текст */
+  text-align: center; /* Выравнивание текста по центру */
+}
+
+/* Кнопка закрытия */
+.close {
+  color: #ff0000; /* Красный цвет, как в других элементах */
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: var(--transition); /* Плавный переход */
+}
+
+.close:hover,
+.close:focus {
+  color: #ffffff; /* Белый цвет при наведении */
+  text-shadow: 0 0 5px #ff0000; /* Красное свечение */
+}
+
+/* Заголовок модального окна */
+.modal-content h2 {
+  color: #ff0000; /* Красный цвет, как в других заголовках */
+  border-bottom: 2px solid #ff0000; /* Красная линия под заголовком */
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+/* Стили для текста и ссылок */
+.modal-content p {
+  font-size: 18px;
+  margin: 20px 0;
+}
+
+.modal-content a {
+  color: #ff0000; /* Красный цвет для ссылок */
+  text-decoration: none;
+  transition: var(--transition); /* Плавный переход */
+}
+
+.modal-content a:hover {
+  color: #ffffff; /* Белый цвет при наведении */
+  text-shadow: 0 0 5px #ff0000; /* Красное свечение */
+}
+
+/* Стили для формы */
+.modal-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.modal-content label {
+  font-size: 16px;
+  text-align: left;
+}
+
+.modal-content input,
+.modal-content textarea {
+  padding: 10px;
+  border: 1px solid #ff0000; /* Красная граница */
+  border-radius: 5px;
+  background-color: #333333; /* Темный фон */
+  color: #ffffff; /* Белый текст */
+  transition: var(--transition); /* Плавный переход */
+}
+
+.modal-content input:focus,
+.modal-content textarea:focus {
+  border-color: #ffffff; /* Белая граница при фокусе */
+  outline: none;
+}
+
+.modal-content button {
+  background: var(--red-gradient); /* Градиентный фон, как в кнопках меню */
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: var(--transition); /* Плавный переход */
+}
+
+.modal-content button:hover {
+  background: linear-gradient(
+    90deg,
+    #e60000,
+    #c00000
+  ); /* Темнее при наведении */
+  transform: scale(1.05); /* Увеличение при наведении */
+}
+/*аналог модльного окна записи на телефон*/
+/* Стилі для блоку */
+.contact-block {
+  background: var(--dark-gradient); /* Градієнтний фон */
+  padding: 20px;
+  border: 2px solid #ff0000; /* Червона рамка */
+  width: 90%; /* Ширина блоку */
+  max-width: 500px; /* Максимальна ширина */
+  margin: 20px auto; /* Центрування блоку */
+  border-radius: 10px; /* Закруглені кути */
+  box-shadow: var(--shadow); /* Тінь */
+  color: #ffffff; /* Білий текст */
+  text-align: center; /* Текст по центру */
+}
+
+/* Заголовок блоку */
+.contact-block h2 {
+  color: #ff0000; /* Червоний колір */
+  border-bottom: 2px solid #ff0000; /* Червона лінія під заголовком */
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+/* Текст і посилання */
+.contact-block p {
+  font-size: 18px;
+  margin: 20px 0;
+}
+
+.contact-block a {
+  color: #ff0000; /* Червоний колір для посилань */
+  text-decoration: none;
+  transition: var(--transition); /* Плавний перехід */
+}
+
+.contact-block a:hover {
+  color: #ffffff; /* Білий колір при наведенні */
+  text-shadow: 0 0 5px #ff0000; /* Червоний ефект світіння */
+}
+
+/* Форма */
+.contact-block form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact-block label {
+  font-size: 16px;
+  text-align: left;
+}
+
+.contact-block input,
+.contact-block textarea {
+  padding: 10px;
+  border: 1px solid #ff0000; /* Червона рамка */
+  border-radius: 5px;
+  background-color: #333333; /* Темний фон */
+  color: #ffffff; /* Білий текст */
+  transition: var(--transition); /* Плавний перехід */
+}
+
+.contact-block input:focus,
+.contact-block textarea:focus {
+  border-color: #ffffff; /* Біла рамка при фокусі */
+  outline: none;
+}
+
+.contact-block button {
+  background: var(--red-gradient); /* Градієнтний фон */
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: var(--transition); /* Плавний перехід */
+}
+
+.contact-block button:hover {
+  background: linear-gradient(
+    90deg,
+    #e60000,
+    #c00000
+  ); /* Темніший градієнт при наведенні */
+  transform: scale(1.05); /* Збільшення при наведенні */
+}
+
+/* Адаптивність для мобільних пристроїв */
+@media (max-width: 600px) {
+  .contact-block {
+    width: 95%; /* Збільшити ширину на малих екранах */
+    padding: 15px; /* Зменшити відступи */
+  }
+
+  .contact-block h2 {
+    font-size: 24px; /* Зменшити розмір заголовка */
+  }
+
+  .contact-block p {
+    font-size: 16px; /* Зменшити розмір тексту */
+  }
+
+  .contact-block input,
+  .contact-block textarea {
+    padding: 8px; /* Зменшити відступи в полях вводу */
+  }
+
+  .contact-block button {
+    padding: 8px 16px; /* Зменшити розмір кнопки */
+  }
+}
+/* Reviews */
+.greviews {
+  text-align: center;
+  width: auto;
+  height: 300px;
+  background-color: #030303;
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+}
+
+/* Embedded Google Map */
+.map-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+  }
+  .menu,
+  .content {
+    width: 100%;
+  }
+  .menu {
+    border-right: none;
+    border-bottom: 2px solid #ff0000;
+  }
+  .usluga {
+    margin-left: 0;
+  }
+  .mapb {
+    width: 100%; /* На мобильных карта занимает всю ширину */
+    padding: 10px;
+  }
+  .gallery-grid {
+    margin-right: 0;
+  }
+  .map-container {
+    height: 250px; /* Уменьшаем высоту на мобильных */
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    max-width: 100%;
+  }
+  .header .logo {
+    width: 150px;
+  }
+  .content {
+    padding: 10px;
+  }
+  .gallery-grid figure {
+    margin-left: 10px;
+  }
+  .map-container {
+    height: 200px; /* Ещё меньше на маленьких экранах */
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* Стили для планшетов */
+  .header .logo {
+    max-width: 250px; /* Уменьшаем логотип для планшетов */
+  }
+
+  .main-container {
+    flex-direction: column; /* Меняем направление контейнера на вертикальное */
+    width: 100%;
+  }
+
+  .menu {
+    width: 100%; /* Меню занимает всю ширину */
+    border-right: none;
+    border-bottom: 2px solid #ff0000; /* Добавляем нижнюю границу */
+  }
+
+  .content {
+    padding: 15px; /* Уменьшаем отступы */
+  }
+
+  .usluga {
+    margin-left: 0; /* Убираем отступ слева */
+  }
+
+  .mapb {
+    width: 100%; /* Карта занимает всю ширину */
+    padding: 15px;
+  }
+
+  .gallery-grid {
+    margin-right: 0; /* Убираем отступ справа */
+  }
+
+  .gallery-grid figure {
+    margin-left: 10px; /* Уменьшаем отступ слева */
+  }
+
+  .gallery-grid img {
+    width: 250px; /* Уменьшаем размер изображений */
+  }
+
+  .map-container {
+    height: 250px; /* Уменьшаем высоту карты */
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .header .logo {
+    max-width: 280px; /* Логотип немного больше, чем на планшетах */
+  }
+
+  .main-container {
+    flex-direction: column; /* Вертикальная компоновка */
+    width: 100%;
+  }
+
+  .menu {
+    width: 100%; /* Меню во всю ширину */
+    border-right: none;
+    border-bottom: 2px solid #ff0000;
+  }
+
+  .content {
+    padding: 20px; /* Чуть больше отступов */
+  }
+
+  .usluga {
+    margin-left: 0;
+  }
+
+  .mapb {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .gallery-grid {
+    margin-right: 0;
+  }
+
+  .gallery-grid figure {
+    margin-left: 15px;
+  }
+
+  .gallery-grid img {
+    width: 300px; /* Увеличиваем размер изображений */
+  }
+
+  .map-container {
+    height: 300px; /* Чуть больше высота карты */
+  }
+}
